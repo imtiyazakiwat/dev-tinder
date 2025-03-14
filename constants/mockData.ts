@@ -83,4 +83,4 @@ export const mockDevelopers: Developer[] = [
       { name: 'Java', percentage: 10 },
     ],
   },
-];
+]; 
