@@ -4,8 +4,25 @@ import { Text, Searchbar, Divider, useTheme, IconButton } from 'react-native-pap
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+// Define interfaces for type safety
+interface Match {
+  id: string;
+  name: string;
+  image: string;
+  isNew: boolean;
+}
+
+interface Conversation {
+  id: string;
+  name: string;
+  image: string;
+  lastMessage: string;
+  time: string;
+  unread: number;
+}
+
 // Mock data for messages
-const MATCHES = [
+const MATCHES: Match[] = [
   {
     id: 'm1',
     name: 'Sophie Johnson',
@@ -38,7 +55,7 @@ const MATCHES = [
   },
 ];
 
-const CONVERSATIONS = [
+const CONVERSATIONS: Conversation[] = [
   {
     id: 'c1',
     name: 'Sophie Johnson',
@@ -77,7 +94,7 @@ export default function MessagesScreen() {
   const theme = useTheme();
   const [searchQuery, setSearchQuery] = useState('');
 
-  const renderMatchItem = ({ item }) => (
+  const renderMatchItem = ({ item }: { item: Match }) => (
     <TouchableOpacity style={styles.matchItem}>
       <View style={styles.matchImageContainer}>
         <Image source={{ uri: item.image }} style={styles.matchImage} />
@@ -89,10 +106,10 @@ export default function MessagesScreen() {
     </TouchableOpacity>
   );
 
-  const renderConversationItem = ({ item }) => (
+  const renderConversationItem = ({ item }: { item: Conversation }) => (
     <TouchableOpacity 
       style={styles.conversationItem}
-      onPress={() => router.push(`/chat/${item.id}`)}
+      onPress={() => router.push(`/chat/${item.id}` as const)}
     >
       <Image source={{ uri: item.image }} style={styles.conversationImage} />
       <View style={styles.conversationContent}>

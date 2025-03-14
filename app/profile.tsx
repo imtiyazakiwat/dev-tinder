@@ -6,7 +6,17 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 // Mock user profile data
-const USER = {
+interface User {
+  name: string;
+  age: number;
+  bio: string;
+  location: string;
+  images: string[];
+  skills: string[];
+  interests: string[];
+}
+
+const USER: User = {
   name: 'Jordan Smith',
   age: 28,
   bio: 'Full-stack developer passionate about building beautiful user interfaces and scalable backend systems. Looking for collaborators on open source projects.',
@@ -57,7 +67,9 @@ export default function ProfileScreen() {
         <Button
           mode="outlined"
           icon="pencil"
-          onPress={() => router.push('/edit-profile')}
+          onPress={() => router.push({
+            pathname: '/edit-profile',
+          })}
           style={styles.editButton}
           textColor="#FF4B7F"
         >

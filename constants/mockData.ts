@@ -7,6 +7,7 @@ export interface Developer {
   location: string;
   bio: string;
   avatar: string;
+  images: string[];
   skills: string[];
   githubStats: {
     repos: number;
@@ -26,6 +27,11 @@ export const mockDevelopers: Developer[] = [
     location: 'San Francisco, CA',
     bio: 'Passionate about building scalable web applications and mentoring junior developers. Love working with React and Node.js.',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
+    images: [
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9',
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80'
+    ],
     skills: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'AWS'],
     githubStats: {
       repos: 45,
@@ -48,6 +54,11 @@ export const mockDevelopers: Developer[] = [
     location: 'Seattle, WA',
     bio: 'Infrastructure as code enthusiast. Specialized in containerization and CI/CD pipelines.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
+    images: [
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d'
+    ],
     skills: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'Jenkins'],
     githubStats: {
       repos: 32,
@@ -70,6 +81,11 @@ export const mockDevelopers: Developer[] = [
     location: 'New York, NY',
     bio: 'Creating beautiful and performant mobile experiences. React Native evangelist.',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
+    images: [
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2'
+    ],
     skills: ['React Native', 'iOS', 'Android', 'Redux', 'GraphQL'],
     githubStats: {
       repos: 28,
